@@ -1,20 +1,20 @@
 import numpy
-def multMatrix(aMatrix,bMatrix):
-    heightOfMatrixA=aMatrix.shape[0]
-    widthOfMatrixA=aMatrix.shape[1]
-    widthOfMatrixB=bMatrix.shape[1]
-    heightOfMatrixB=bMatrix.shape[0]
+def multMatrix(a_matrix,b_matrix):
+    height_matrix_a = a_matrix.shape[0]
+    width_matrix_a = a_matrix.shape[1]
+    width_matrix_b = b_matrix.shape[1]
+    height_matrix_b = b_matrix.shape[0]
 
-    if widthOfMatrixA!=heightOfMatrixB:
-        return 'Error'
+    if width_matrix_a != height_matrix_b:
+        raise Exception('error')
     else:
-        cMatrix=numpy.zeros(shape=(heightOfMatrixA, widthOfMatrixB));
-        for i in range(0, heightOfMatrixA):
-            for j in range(0, widthOfMatrixB):
-                s=0;
-                for k in range(0, widthOfMatrixA):
-                    aItem=aMatrix.item((i,k))
-                    bItem=bMatrix.item((k,j))
-                    s=s+aItem*bItem
-                cMatrix.itemset((i,j),s)
-        return cMatrix;
+        c_matrix = numpy.zeros(shape = (height_matrix_a, width_matrix_b));
+        for i in range(0, height_matrix_a):
+            for j in range(0, width_matrix_b):
+                s = 0;
+                for k in range(0, width_matrix_a):
+                    a_item = a_matrix.item((i,k))
+                    b_item = b_matrix.item((k,j))
+                    s = s+a_item*b_item
+                c_matrix.itemset((i,j),s)
+        return c_matrix;
