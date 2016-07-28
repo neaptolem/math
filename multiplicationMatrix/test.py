@@ -1,0 +1,16 @@
+from multiplicationMatrix import *
+# import numpy
+print('Test #1')
+a=numpy.matrix('2 2 4; 2 1 1')
+b=numpy.matrix('6 1; 4 -1; 7 2')
+c=numpy.matrix('48 8; 23 3')
+print(multMatrix(a,b)==c)
+print('Test #2')
+a=numpy.matrix('6 1; 4 -1; 7 2')
+b=numpy.matrix('2 2 4; 2 1 1')
+c=numpy.matrix('14 13 25; 6 7 15; 18 16 30')
+print(multMatrix(a,b)==c)
+print('Test #3')
+a=numpy.matrix('2 2; 3 3')
+b=numpy.matrix('1')
+print(multMatrix(a,b)=='Error')
